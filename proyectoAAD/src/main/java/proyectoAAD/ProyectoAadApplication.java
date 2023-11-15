@@ -11,6 +11,7 @@ public class ProyectoAadApplication {
 		
 		xmlTreatment file_1 = new xmlTreatment("src/main/resources/contratos-adjudicados-jun-22.xml");
 		file_1.readXML();
+		
 	}
 
 }
