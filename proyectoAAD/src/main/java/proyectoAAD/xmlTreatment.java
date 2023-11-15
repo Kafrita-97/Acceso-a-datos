@@ -25,4 +25,3 @@ public class xmlTreatment {
     }
 }
 
-//Proyecto del modulo de acceso a datos de 2º de DAM, consiste en leer un archivo XML, almacenar su info en una BD y por último crear un nuevo XML modificando algún dato respecto al archivo original
