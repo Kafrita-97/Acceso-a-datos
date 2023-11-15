@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<accesoadatos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "Main",
+            "projectName": "accesoadatos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=54212 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=accesoadatos"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProyectoAadApplication<proyectoAAD>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyectoAAD.proyectoAAD.ProyectoAadApplication",
+            "projectName": "proyectoAAD",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
