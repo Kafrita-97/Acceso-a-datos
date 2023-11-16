@@ -1,205 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?mso-application progid="Excel.Sheet"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
-        <Colors>
-            <Color>
-                <Index>3</Index>
-                <RGB>#000000</RGB>
-            </Color>
-            <Color>
-                <Index>4</Index>
-                <RGB>#0000ee</RGB>
-            </Color>
-            <Color>
-                <Index>5</Index>
-                <RGB>#006600</RGB>
-            </Color>
-            <Color>
-                <Index>6</Index>
-                <RGB>#333333</RGB>
-            </Color>
-            <Color>
-                <Index>7</Index>
-                <RGB>#808080</RGB>
-            </Color>
-            <Color>
-                <Index>8</Index>
-                <RGB>#996600</RGB>
-            </Color>
-            <Color>
-                <Index>9</Index>
-                <RGB>#c0c0c0</RGB>
-            </Color>
-            <Color>
-                <Index>10</Index>
-                <RGB>#cc0000</RGB>
-            </Color>
-            <Color>
-                <Index>11</Index>
-                <RGB>#ccffcc</RGB>
-            </Color>
-            <Color>
-                <Index>12</Index>
-                <RGB>#dddddd</RGB>
-            </Color>
-            <Color>
-                <Index>13</Index>
-                <RGB>#ffcccc</RGB>
-            </Color>
-            <Color>
-                <Index>14</Index>
-                <RGB>#ffffcc</RGB>
-            </Color>
-            <Color>
-                <Index>15</Index>
-                <RGB>#ffffff</RGB>
-            </Color>
-        </Colors>
-    </OfficeDocumentSettings>
-    <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-        <WindowHeight>9000</WindowHeight>
-        <WindowWidth>13860</WindowWidth>
-        <WindowTopX>240</WindowTopX>
-        <WindowTopY>75</WindowTopY>
-        <ProtectStructure>False</ProtectStructure>
-        <ProtectWindows>False</ProtectWindows>
-    </ExcelWorkbook>
-    <Styles>
-        <Style ss:ID="Default" ss:Name="Default" />
-        <Style ss:ID="Note" ss:Name="Note">
-            <Font ss:FontName="Liberation Sans" ss:Size="10" />
-        </Style>
-        <Style ss:ID="Default" ss:Name="Default" />
-        <Style ss:ID="Heading" ss:Name="Heading">
-            <Alignment />
-            <Font ss:Bold="1" ss:Color="#000000" ss:Size="24" />
-        </Style>
-        <Style ss:ID="Heading_20_1" ss:Name="Heading 1">
-            <Alignment />
-            <Font ss:Bold="1" ss:Color="#000000" ss:Size="18" />
-        </Style>
-        <Style ss:ID="Heading_20_2" ss:Name="Heading 2">
-            <Alignment />
-            <Font ss:Bold="1" ss:Color="#000000" ss:Size="12" />
-        </Style>
-        <Style ss:ID="Text" ss:Name="Text">
-            <Alignment />
-        </Style>
-        <Style ss:ID="Note" ss:Name="Note">
-            <Alignment />
-            <Borders>
-                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
-                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
-                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
-                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#808080" />
-            </Borders>
-            <Interior ss:Color="#ffffcc" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Footnote" ss:Name="Footnote">
-            <Alignment />
-        </Style>
-        <Style ss:ID="Hyperlink" ss:Name="Hyperlink">
-            <Alignment />
-        </Style>
-        <Style ss:ID="Status" ss:Name="Status">
-            <Alignment />
-        </Style>
-        <Style ss:ID="Good" ss:Name="Good">
-            <Alignment />
-            <Interior ss:Color="#ccffcc" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Neutral" ss:Name="Neutral">
-            <Alignment />
-            <Interior ss:Color="#ffffcc" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Bad" ss:Name="Bad">
-            <Alignment />
-            <Interior ss:Color="#ffcccc" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Warning" ss:Name="Warning">
-            <Alignment />
-        </Style>
-        <Style ss:ID="Error" ss:Name="Error">
-            <Alignment />
-            <Interior ss:Color="#cc0000" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Accent" ss:Name="Accent">
-            <Alignment />
-        </Style>
-        <Style ss:ID="Accent_20_1" ss:Name="Accent 1">
-            <Alignment />
-            <Font ss:Bold="1" ss:Color="#ffffff" />
-            <Interior ss:Color="#000000" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Accent_20_2" ss:Name="Accent 2">
-            <Alignment />
-            <Font ss:Bold="1" ss:Color="#ffffff" />
-            <Interior ss:Color="#808080" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Accent_20_3" ss:Name="Accent 3">
-            <Alignment />
-            <Interior ss:Color="#dddddd" ss:Pattern="Solid" />
-        </Style>
-        <Style ss:ID="Result" ss:Name="Result">
-            <Alignment />
-            <Font ss:Bold="1" ss:Italic="1" ss:Underline="Single" />
-        </Style>
-        <Style ss:ID="co1" />
-        <Style ss:ID="co2" />
-        <Style ss:ID="co3" />
-        <Style ss:ID="co4" />
-        <Style ss:ID="co5" />
-        <Style ss:ID="co6" />
-        <Style ss:ID="co7" />
-        <Style ss:ID="co8" />
-        <Style ss:ID="co9" />
-        <Style ss:ID="ta1" />
-        <Style ss:ID="ce1">
-            <NumberFormat ss:Format="Short Date" />
-        </Style>
-        <Style ss:ID="ce2">
-            <NumberFormat ss:Format="General" />
-        </Style>
-    </Styles>
     <ss:Worksheet ss:Name="contratos-adjudicados-oct-23">
         <Table ss:StyleID="ta1">
-            <Column ss:Width="257.3008" />
-            <Column ss:Width="495.8078" />
-            <Column ss:Width="277.3417" />
-            <Column ss:Width="495.8078" />
-            <Column ss:Width="462.6141" />
-            <Column ss:Width="291.2598" />
-            <Column ss:Width="163.8992" />
-            <Column ss:Width="291.9968" />
-            <Column ss:Span="1" ss:Width="126.0567" />
-            <Row ss:AutoFitHeight="0" ss:Height="12.8126">
-                <Cell>
-                    <Data ss:Type="String">NIF</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">ADJUDICATARIO</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">OBJETO GENÉRICO</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">OBJETO</Data>
-                </Cell>
-                <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">FECHA DE ADJUDICACIÓN</Data>
-                </Cell>
-                <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">IMPORTE</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">PROVEEDORES CONSULTADOS</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">TIPO DE CONTRATO</Data>
-                </Cell>
-                <Cell ss:Index="10" />
-            </Row>
             <Row ss:AutoFitHeight="0" ss:Height="12.8126">
                 <Cell>
                     <Data ss:Type="String">B41138447</Data>
@@ -8665,7 +8467,7 @@
                     <Data ss:Type="String">SUMINISTRO TECLADOS</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">02.04.2019</Data>
+                    <Data ss:Type="String">2019-04-02T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">45,23 €</Data>
@@ -8692,7 +8494,7 @@
                     <Data ss:Type="String">COMBUSTIBLE Y PEAJE MARZO</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">03.04.2019</Data>
+                    <Data ss:Type="String">2019-04-03T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">84,84 €</Data>
@@ -8719,7 +8521,7 @@
                     <Data ss:Type="String">LAVADO VEHÍCULO OFICIAL</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">05.04.2019</Data>
+                    <Data ss:Type="String">2019-04-05T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">4,50 €</Data>
@@ -8746,7 +8548,7 @@
                     <Data ss:Type="String">SUMINISTRO BATERIAS</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">16.04.2019</Data>
+                    <Data ss:Type="String">2019-04-16T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">149,77 €</Data>
@@ -8773,7 +8575,7 @@
                     <Data ss:Type="String">MATERIAL PILAS Y CARGADOR</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">24.04.2019</Data>
+                    <Data ss:Type="String">2019-04-24T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">31,35 €</Data>
@@ -8800,7 +8602,7 @@
                     <Data ss:Type="String">MATERIAL INFORMÁTICO</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">24.04.2019</Data>
+                    <Data ss:Type="String">2019-04-24T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">141,55 €</Data>
@@ -8827,7 +8629,7 @@
                     <Data ss:Type="String">JORN FORM DPD MAL A TRONC</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">26.04.2019</Data>
+                    <Data ss:Type="String">2019-04-26T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">250,00 €</Data>
@@ -8854,7 +8656,7 @@
                     <Data ss:Type="String">JORN FORM DPD SEV A TRONC</Data>
                 </Cell>
                 <Cell ss:StyleID="Default">
-                    <Data ss:Type="String">26.04.2019</Data>
+                    <Data ss:Type="String">2019-04-26T00:00:00.000</Data>
                 </Cell>
                 <Cell ss:StyleID="ce2">
                     <Data ss:Type="String">250,00 €</Data>
@@ -14647,7 +14449,10 @@
             </Row>
             <Row ss:AutoFitHeight="0" ss:Height="12.8126">
                 <Cell>
-                    <Data ss:Type="String">A25027145 SERVICIOS MICROINFORMÁTICOS, S.A.</Data>
+                    <Data ss:Type="String">A25027145</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">SERVICIOS MICROINFORMÁTICOS, S.A.</Data>
                 </Cell>
                 <Cell ss:Index="3">
                     <Data ss:Type="String">ACTIVIDAD/MATERIAL INFORMÁTICO Y OFICINA</Data>
@@ -14671,7 +14476,10 @@
             </Row>
             <Row ss:AutoFitHeight="0" ss:Height="12.8126">
                 <Cell>
-                    <Data ss:Type="String">A25027145 SERVICIOS MICROINFORMÁTICOS, S.A.</Data>
+                    <Data ss:Type="String">A25027145</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">SERVICIOS MICROINFORMÁTICOS, S.A.</Data>
                 </Cell>
                 <Cell ss:Index="3">
                     <Data ss:Type="String">ACTIVIDAD/MATERIAL INFORMÁTICO Y OFICINA</Data>
@@ -14722,7 +14530,10 @@
             </Row>
             <Row ss:AutoFitHeight="0" ss:Height="12.8126">
                 <Cell>
-                    <Data ss:Type="String">A25027145 SERVICIOS MICROINFORMÁTICOS, S.A.</Data>
+                    <Data ss:Type="String">A25027145</Data>
+                </Cell>
+                <Cell>
+                    <Data ss:Type="String">SERVICIOS MICROINFORMÁTICA, S.A.</Data>
                 </Cell>
                 <Cell ss:Index="3">
                     <Data ss:Type="String">ACTIVIDAD/MATERIAL INFORMÁTICO Y OFICINA</Data>
@@ -16991,10 +16802,7 @@
                     <Data ss:Type="String">B14404065</Data>
                 </Cell>
                 <Cell>
-                    <Data ss:Type="String">VISTALEGRE SOLUTIONS</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">S.L.</Data>
+                    <Data ss:Type="String">VISTALEGRE SOLUTIONS S.L.</Data>
                 </Cell>
                 <Cell>
                     <Data ss:Type="String">ACTIVIDAD/MATERIAL INFORMÁTICO Y OFICINA</Data>
@@ -17023,10 +16831,7 @@
                     <Data ss:Type="String">B21521307</Data>
                 </Cell>
                 <Cell>
-                    <Data ss:Type="String">PANDORABOX CLIPPING</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">SL</Data>
+                    <Data ss:Type="String">PANDORABOX CLIPPING S.L.</Data>
                 </Cell>
                 <Cell>
                     <Data ss:Type="String">ACTIVIDAD/DOCUMENTACIÒN Y PUBLICACIONES</Data>
@@ -17351,10 +17156,7 @@
                     <Data ss:Type="String">B91447193</Data>
                 </Cell>
                 <Cell>
-                    <Data ss:Type="String">SOLUTIA INNOVAWORLD TECHNOLOGIES</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">S.L.</Data>
+                    <Data ss:Type="String">SOLUTIA INNOVAWORLD TECHNOLOGIES S.L.</Data>
                 </Cell>
                 <Cell>
                     <Data ss:Type="String">SEDE/MANTENIMIENTO</Data>
@@ -17590,10 +17392,7 @@
                     <Data ss:Type="String">B14404065</Data>
                 </Cell>
                 <Cell>
-                    <Data ss:Type="String">VISTALEGRE SOLUTIONS</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">S.L.</Data>
+                    <Data ss:Type="String">VISTALEGRE SOLUTIONS S.L.</Data>
                 </Cell>
                 <Cell>
                     <Data ss:Type="String">SEDE/SUMINISTROS</Data>
@@ -17826,10 +17625,7 @@
                     <Data ss:Type="String">B42803585</Data>
                 </Cell>
                 <Cell>
-                    <Data ss:Type="String">MAGNOLIA DIGITAL AGENCIA</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">S.L.</Data>
+                    <Data ss:Type="String">MAGNOLIA DIGITAL AGENCIA S.L.</Data>
                 </Cell>
                 <Cell>
                     <Data ss:Type="String">ACTIVIDAD/PUBLICIDAD Y COMUNICACIÓN</Data>
@@ -17858,10 +17654,7 @@
                     <Data ss:Type="String">B91447193</Data>
                 </Cell>
                 <Cell>
-                    <Data ss:Type="String">SOLUTIA INNOVAWORLD TECHNOLOGIES</Data>
-                </Cell>
-                <Cell>
-                    <Data ss:Type="String">S.L.</Data>
+                    <Data ss:Type="String">SOLUTIA INNOVAWORLD TECHNOLOGIES S.L.</Data>
                 </Cell>
                 <Cell>
                     <Data ss:Type="String">SEDE/SUMINISTRO</Data>
