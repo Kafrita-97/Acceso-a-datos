@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProyectoAadApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoAadApplication.class, args);
+
+		xmlToDataBase con1 = new xmlToDataBase();
 		
 		/* OpenBrowser op = new OpenBrowser();
 		try {

@@ -1,4 +1,4 @@
-package com.proyectoAAD.proyectoAAD;
+package proyectoAAD;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
