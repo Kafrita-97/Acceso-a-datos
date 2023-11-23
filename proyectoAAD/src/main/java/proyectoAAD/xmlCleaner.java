@@ -14,68 +14,80 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-/* 
- * Esta clase cumple con la unica función de limpiar el archivo xml a tratar,
- * dándole un formato mas adecuado eliminando nodos prescindibles e informacion
- * que no vamos a tratar, asi como nombrar las etiquetas correctamente. Esta 
- * clase se ha hecho a medida para el xml que hay que tratar. Se incluye en el 
- * proyecto igualmente aunque no se vaya a ejecutar junto a este.
+/**
+ * Esta clase se encarga de limpiar un archivo XML específico dándole un formato
+ * más adecuado.
+ * Elimina nodos prescindibles e información no necesaria y renombra las
+ * etiquetas según las necesidades del proyecto.
+ * Aunque no se ejecute junto con el proyecto principal, se incluye para
+ * referencia y documentación.
  */
-
-//pasar la coneccion a la db a otra clase
-
-public class xmlCleaner {
+public class XmlCleaner {
 
     private static String inFilePath = "/Users/juanma/Library/Mobile Documents/com~apple~CloudDocs/V/Estudios/DAM/2º/Acceso a datos/Trabajo voluntario - Acceso a datos/Proyecto/proyectoAAD/src/main/resources/contratos-adjudicados-jun-22.xml";
     private static String outFilePath = "/Users/juanma/Library/Mobile Documents/com~apple~CloudDocs/V/Estudios/DAM/2º/Acceso a datos/Trabajo voluntario - Acceso a datos/Proyecto/proyectoAAD/src/main/resources/contratos-adjudicados-jun-22.xml";
 
-    public xmlCleaner(String _inFilePath, String _outFilePath) {
+    /**
+     * Constructor que acepta las rutas de entrada y salida del archivo XML.
+     * 
+     * @param _inFilePath  La ruta del archivo XML de entrada.
+     * @param _outFilePath La ruta del archivo XML de salida después de la limpieza.
+     */
+    public XmlCleaner(String _inFilePath, String _outFilePath) {
         inFilePath = _inFilePath;
         outFilePath = _outFilePath;
         clean();
     }
 
+    /**
+     * Realiza la limpieza del archivo XML especificado.
+     */
     private void clean() {
 
         try {
 
+            // Parsea el archivo de entrada
             Document docXmlInput = DocumentBuilderFactory.newInstance().newDocumentBuilder()
                     .parse(new File(inFilePath));
             docXmlInput.getDocumentElement().normalize();
 
+            // Crea un nuevo documento XML de salida
             Document docXmlOutout = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
 
-            // definimos el elemento raíz del documento
+            // Define el elemento raíz del documento
             Element xmlOutputRootElement = docXmlOutout.createElement("Root");
             docXmlOutout.appendChild(xmlOutputRootElement);
 
+            // Obtiene la lista de nodos "Row" del documento de entrada
             NodeList rowNodeList = docXmlInput.getElementsByTagName("Row");
             int valueId = 1;
 
-            // Recorre cada row, es decir, cada instancia a guardar
+            // Recorre cada nodo "Row" (cada instancia a guardar)
             for (int i = 0; i < rowNodeList.getLength(); i++) {
 
+                // Crea un nuevo elemento "Contrato" en el documento de salida
                 Element xmlOutElementContrato = docXmlOutout.createElement("Contrato");
                 xmlOutputRootElement.appendChild(xmlOutElementContrato);
 
+                // Añade un atributo "id" al elemento "Contrato"
                 Attr xmlOutAttrId = docXmlOutout.createAttribute("id");
                 xmlOutAttrId.setValue(Integer.toString(valueId));
                 xmlOutElementContrato.setAttributeNode(xmlOutAttrId);
 
-                // Aqui se guardan todos los hijos de cada row
+                // Obtiene los hijos de cada nodo "Row"
                 NodeList rowChildsNodeList = rowNodeList.item(i).getChildNodes();
-                // Se recorre cada hijo del row
+
+                // Recorre cada hijo del nodo "Row"
                 int flag = 1;
                 for (int j = 0; j < rowChildsNodeList.getLength(); j++) {
 
-                    // Aqui se guarda cada hijo del row en un nodo simple
+                    // Obtiene el nodo de datos (segundo hijo) de cada hijo del nodo "Row"
                     Node dataNode = rowChildsNodeList.item(j).getChildNodes().item(1);
 
                     // Descartamos los nulos
                     if (dataNode != null && dataNode.getNodeType() == Node.ELEMENT_NODE) {
 
-                        // Se cambia la etiqueta para poder identificar mejor los datos a la hora de
-                        // introducirlo en la BD
+                        // Cambia la etiqueta para identificar mejor los datos al introducirlos en la BD
                         switch (flag) {
                             case 1:
                                 Element xmlOutElementNIF = docXmlOutout.createElement("NIF");
@@ -163,7 +175,7 @@ public class xmlCleaner {
 
             docXmlOutout.normalizeDocument();
 
-            // clases necesarias finalizar la creación del archivo XML
+            // Clases necesarias para finalizar la creación del archivo XML
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             DOMSource source = new DOMSource(docXmlOutout);
             StreamResult result = new StreamResult(new File(outFilePath));

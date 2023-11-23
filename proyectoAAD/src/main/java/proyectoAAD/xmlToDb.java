@@ -14,7 +14,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class xmlToDb {
+public class XmlToDb {
 
     private String jdbcURL;
     private String userName;
@@ -30,8 +30,16 @@ public class xmlToDb {
             +
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    public xmlToDb(String _jdbcURL, String _userName, String _password) {
-        
+    /**
+     * Constructor que acepta la URL de la base de datos, el nombre de usuario y la
+     * contraseña.
+     * 
+     * @param _jdbcURL  La URL de la base de datos.
+     * @param _userName El nombre de usuario para la conexión a la base de datos.
+     * @param _password La contraseña para la conexión a la base de datos.
+     */
+    public XmlToDb(String _jdbcURL, String _userName, String _password) {
+
         jdbcURL = _jdbcURL;
         userName = _userName;
         password = _password;
@@ -40,11 +48,16 @@ public class xmlToDb {
 
     }
 
+    /**
+     * Inserta datos en la base de datos a partir de un archivo XML.
+     */
     private void insertDataToDB() {
 
         try (Connection connectionToDB = DriverManager.getConnection(jdbcURL, userName, password)) {
 
+            // Crea la tabla en la base de datos
             createTable(connectionToDB);
+            // Inserta datos en la tabla desde el archivo XML
             insertData(connectionToDB);
 
         } catch (SQLException e) {
@@ -53,10 +66,16 @@ public class xmlToDb {
 
     }
 
+    /**
+     * Crea la tabla en la base de datos.
+     * 
+     * @param connectionToDB La conexión a la base de datos.
+     */
     private void createTable(Connection connectionToDB) {
 
         try (PreparedStatement preparedStatement = connectionToDB.prepareStatement(createTableSQL)) {
 
+            // Ejecuta la consulta para crear la tabla
             preparedStatement.executeUpdate();
 
         } catch (Exception e) {
@@ -65,16 +84,22 @@ public class xmlToDb {
 
     }
 
+    /**
+     * Inserta datos en la base de datos desde un archivo XML.
+     * 
+     * @param connection La conexión a la base de datos.
+     */
     private void insertData(Connection connection) {
 
         try {
 
+            // Parsea el archivo XML
             Document docXml = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(FilePath));
 
-            // en este nodelist se guardan cada uno de los contratos
+            // Obtiene la lista de nodos "Contrato"
             NodeList contratoNodeList = docXml.getElementsByTagName("Contrato");
 
-            // Se recorre cada contrato del nodelist
+            // Itera sobre los nodos "Contrato" e inserta los datos en la base de datos
             for (int i = 0; i < contratoNodeList.getLength(); i++) {
 
                 insertNodeData(connection, contratoNodeList.item(i));
@@ -87,30 +112,48 @@ public class xmlToDb {
 
     }
 
+    /**
+     * Inserta los datos de un nodo en la base de datos.
+     * 
+     * @param connection La conexión a la base de datos.
+     * @param node       El nodo que contiene los datos a insertar.
+     * @throws SQLException Si hay un error al ejecutar la consulta SQL.
+     */
     private void insertNodeData(Connection connection, Node node) throws SQLException {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);) {
 
-            // al haber contratos que no tienen el campo "otro", primero lo establezco a
-            // null y en el casi de que sí lo tenga, se cambiará en el switch
+            // Inicializa el campo "OTRO" como nulo; se cambiará en el switch si es necesario
             preparedStatement.setNull(9, java.sql.Types.VARCHAR);
 
+            // Obtiene la lista de nodos del contenido del nodo "Contrato"
             NodeList contratoContentNodeList = node.getChildNodes();
 
+            // Itera sobre los nodos del contenido del "Contrato" e inserta los datos en la base de datos
             for (int j = 0; j < contratoContentNodeList.getLength(); j++) {
 
-                Node nodeFinal = contratoContentNodeList.item(j);
+                Node childNode = contratoContentNodeList.item(j);
 
-                setPreparedStatementParam(preparedStatement, nodeFinal);
+                // Establece los parámetros en la consulta preparada
+                setPreparedStatementParam(preparedStatement, childNode);
 
             }
 
+            // Ejecuta la consulta para insertar los datos en la base de datos
             preparedStatement.executeUpdate();
 
         }
-        
+
     }
 
+    /**
+     * Establece los parámetros en la consulta preparada según el nombre del nodo.
+     * 
+     * @param preparedStatement La consulta preparada.
+     * @param node              El nodo que contiene el dato a insertar.
+     * @throws DOMException Si hay un error al crear el elemento XML.
+     * @throws SQLException Si hay un error al obtener el valor del conjunto de resultados.
+     */
     private void setPreparedStatementParam(PreparedStatement preparedStatement, Node node)
             throws DOMException, SQLException {
 
