@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -115,21 +116,23 @@ public class XmlToDb {
     /**
      * Inserta los datos de un nodo en la base de datos.
      * 
-     * @param connection La conexión a la base de datos.
-     * @param node       El nodo que contiene los datos a insertar.
+     * @param connection    La conexión a la base de datos.
+     * @param node          El nodo que contiene los datos a insertar.
      * @throws SQLException Si hay un error al ejecutar la consulta SQL.
      */
     private void insertNodeData(Connection connection, Node node) throws SQLException {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);) {
 
-            // Inicializa el campo "OTRO" como nulo; se cambiará en el switch si es necesario
+            // Inicializa el campo "OTRO" como nulo; se cambiará en el switch si es
+            // necesario
             preparedStatement.setNull(9, java.sql.Types.VARCHAR);
 
             // Obtiene la lista de nodos del contenido del nodo "Contrato"
             NodeList contratoContentNodeList = node.getChildNodes();
 
-            // Itera sobre los nodos del contenido del "Contrato" e inserta los datos en la base de datos
+            // Itera sobre los nodos del contenido del "Contrato" e inserta los datos en la
+            // base de datos
             for (int j = 0; j < contratoContentNodeList.getLength(); j++) {
 
                 Node childNode = contratoContentNodeList.item(j);
@@ -147,59 +150,33 @@ public class XmlToDb {
     }
 
     /**
-     * Establece los parámetros en la consulta preparada según el nombre del nodo.
-     * 
-     * @param preparedStatement La consulta preparada.
-     * @param node              El nodo que contiene el dato a insertar.
-     * @throws DOMException Si hay un error al crear el elemento XML.
-     * @throws SQLException Si hay un error al obtener el valor del conjunto de resultados.
+     * Establece los parámetros de un PreparedStatement en función del nombre del nodo.
+     *
+     * @param preparedStatement         El PreparedStatement al que se le establecerán los parámetros.
+     * @param node                      El nodo que contiene la información a ser asignada como parámetro.
+     * @throws DOMException             Si ocurre una excepción relacionada con el modelo de objeto de documento (DOM).
+     * @throws SQLException             Si hay un problema al establecer los parámetros en el PreparedStatement.
      */
     private void setPreparedStatementParam(PreparedStatement preparedStatement, Node node)
             throws DOMException, SQLException {
 
-        switch (node.getNodeName()) {
+        Map<String, Integer> mapNodeNameIndex = Map.of(
+            "NIF", 1,
+            "ADJUDICATARIO", 2,
+            "OBJETO_GENERICO", 3,
+            "OBJETO", 4,
+            "FECHA_ADJUDICACION", 5,
+            "IMPORTE", 6,
+            "PROVEEDORES_CONSULTADOS", 7,
+            "TIPO_CONTRATO", 8,
+            "OTRO", 9);
 
-            case "NIF":
-                preparedStatement.setString(1, node.getTextContent());
-                break;
+        if (mapNodeNameIndex.containsKey(node.getNodeName())) {
 
-            case "ADJUDICATARIO":
-                preparedStatement.setString(2, node.getTextContent());
-                break;
-
-            case "OBJETO_GENERICO":
-                preparedStatement.setString(3, node.getTextContent());
-                break;
-
-            case "OBJETO":
-                preparedStatement.setString(4, node.getTextContent());
-                break;
-
-            case "FECHA_ADJUDICACION":
-                preparedStatement.setString(5, node.getTextContent());
-                break;
-
-            case "IMPORTE":
-                preparedStatement.setString(6, node.getTextContent());
-                break;
-
-            case "PROVEEDORES_CONSULTADOS":
-                preparedStatement.setString(7, node.getTextContent());
-                break;
-
-            case "TIPO_CONTRATO":
-                preparedStatement.setString(8, node.getTextContent());
-                break;
-
-            case "OTRO":
-                preparedStatement.setString(9, node.getTextContent());
-                break;
-
-            default:
-                break;
+            preparedStatement.setString(mapNodeNameIndex.get(node.getNodeName()), node.getTextContent());
 
         }
-
+    
     }
 
 }

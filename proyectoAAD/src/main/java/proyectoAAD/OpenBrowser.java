@@ -20,8 +20,8 @@ public class OpenBrowser {
     /**
      * Abre el navegador web predeterminado en el sistema operativo Linux.
      *
-     * @param url La URL que se abrirá en el navegador.
-     * @throws IOException Si ocurre un error de entrada/salida.
+     * @param url           La URL que se abrirá en el navegador.
+     * @throws IOException  Si ocurre un error de entrada/salida.
      */
     public void abrirNavegadorPredeterminadorLinux(String url) throws IOException {
         Runtime.getRuntime().exec("xdg-open " + url);
@@ -30,8 +30,8 @@ public class OpenBrowser {
     /**
      * Abre el navegador web predeterminado en el sistema operativo macOS.
      *
-     * @param url La URL que se abrirá en el navegador.
-     * @throws IOException Si ocurre un error de entrada/salida.
+     * @param url           La URL que se abrirá en el navegador.
+     * @throws IOException  Si ocurre un error de entrada/salida.
      */
     public void abrirNavegadorPredeterminadorMacOsx(String url) throws IOException{
         Runtime.getRuntime().exec("open " + url);
@@ -40,8 +40,8 @@ public class OpenBrowser {
     /**
      * Abre el navegador web predeterminado según el sistema operativo actual.
      *
-     * @param url La URL que se abrirá en el navegador.
-     * @throws IOException Si ocurre un error de entrada/salida.
+     * @param url           La URL que se abrirá en el navegador.
+     * @throws IOException  Si ocurre un error de entrada/salida.
      */
     public void abrirNavegadorPorDefecto(String url) throws IOException{
         String osName = System.getProperty("os.name");

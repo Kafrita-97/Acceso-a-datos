@@ -36,12 +36,12 @@ public class ProyectoAadApplication {
          * Este código está comentado ya que la clase OpenBrowser no está presente.
          * Si la clase está implementada, puedes descomentar esta sección para abrir el navegador.
          */
-		 OpenBrowser op = new OpenBrowser();
+		 /* OpenBrowser op = new OpenBrowser();
 		 try {
 			op.abrirNavegadorPorDefecto("http://localhost:8080/h2-console/");
 		 } catch (IOException e) {
 			e.printStackTrace();
-		 }
+		 } */
 		
 	}
 

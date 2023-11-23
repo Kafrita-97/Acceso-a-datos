@@ -80,7 +80,7 @@ public class DbToXml {
      * 
      * @param newXml            El documento XML al que se agregarán los datos.
      * @param preparedStatement La declaración preparada para la consulta SQL.
-     * @throws SQLException Si hay un error al ejecutar la consulta SQL.
+     * @throws SQLException     Si hay un error al ejecutar la consulta SQL.
      */
     private void extractDataToXml(Document newXml, PreparedStatement preparedStatement) throws SQLException {
 
@@ -122,9 +122,9 @@ public class DbToXml {
      * @param resultSet             El conjunto de resultados de la consulta SQL.
      * @param xmlOutElementContrato El elemento padre al que se agregará el nuevo
      *                              elemento.
-     * @throws DOMException Si hay un error al crear el elemento XML.
-     * @throws SQLException Si hay un error al obtener el valor del conjunto de
-     *                      resultados.
+     * @throws DOMException         Si hay un error al crear el elemento XML.
+     * @throws SQLException         Si hay un error al obtener el valor del conjunto de
+     *                              resultados.
      */
     private void createXmlElement(Document newXml, String elementName, int rsIndex, ResultSet resultSet,
             Node xmlOutElementContrato) throws DOMException, SQLException {
@@ -138,7 +138,7 @@ public class DbToXml {
     /**
      * Guarda el documento XML en un archivo.
      * 
-     * @param newXml El documento XML que se guardará.
+     * @param newXml                                El documento XML que se guardará.
      * @throws TransformerException                 Si hay un error al transformar
      *                                              el documento XML.
      * @throws TransformerFactoryConfigurationError Si hay un error de configuración
